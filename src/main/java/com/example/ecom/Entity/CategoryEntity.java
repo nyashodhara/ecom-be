@@ -26,5 +26,5 @@ public class CategoryEntity {
     private String image;
 
     @Column(name = "category_code",columnDefinition = "varchar(20) NOT NULL")
-    private int categoryCode;
+    private String categoryCode;
 }
