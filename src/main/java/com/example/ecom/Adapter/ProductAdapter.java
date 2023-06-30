@@ -15,7 +15,8 @@ public class ProductAdapter {
                 .name(productEntity.getName())
                 .images(productEntity.getImage())
                 .price(productEntity.getPrice())
-                .category(productEntity.getCategory()).build();
+                .category(productEntity.getCategory())
+                .description(productEntity.getDescription()).build();
     }
 
     public List<ProductDto> getProductDtoList(List<ProductEntity> productEntities){

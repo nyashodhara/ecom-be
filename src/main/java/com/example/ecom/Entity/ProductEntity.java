@@ -30,4 +30,7 @@ public class ProductEntity {
 
     @Column(name = "category_id",columnDefinition = "int DEFAULT NULL")
     private Long category;
+
+    @Column(name = "description",columnDefinition = "default NULL")
+    private String description;
 }
