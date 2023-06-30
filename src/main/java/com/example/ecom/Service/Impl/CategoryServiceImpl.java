@@ -20,7 +20,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public List<CategoryDto> getCategories() {
         List<CategoryEntity> categoryEntities = categoryRepository.findAll();
-        log.info("categories" + categoryEntities);
+        log.info("categories list" + categoryEntities);
         return CategoryAdapter.getCategoryDtoList(categoryEntities);
     }
 }
