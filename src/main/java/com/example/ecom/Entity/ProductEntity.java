@@ -31,6 +31,6 @@ public class ProductEntity {
     @Column(name = "category_id",columnDefinition = "int DEFAULT NULL")
     private Long category;
 
-    @Column(name = "description",columnDefinition = "default NULL")
+    @Column(name = "description",columnDefinition = "varchar(300) default NULL")
     private String description;
 }
