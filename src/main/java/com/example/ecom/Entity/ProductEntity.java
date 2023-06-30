@@ -29,5 +29,5 @@ public class ProductEntity {
     private Double price;
 
     @Column(name = "category_id",columnDefinition = "int DEFAULT NULL")
-    private int category;
+    private Long category;
 }

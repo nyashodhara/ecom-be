@@ -12,7 +12,7 @@ import lombok.experimental.SuperBuilder;
 public class ProductDto {
     private Long productId;
     private String name;
-    private int category;
+    private Long category;
     private Double price;
     private String images;
 }

@@ -6,5 +6,5 @@ import com.example.ecom.Dto.ProductSearchDto;
 import java.util.List;
 
 public interface ProductService {
-    List<ProductDto> searchProducts(ProductSearchDto productSearchDto);
+    List<ProductDto> searchProducts();
 }
