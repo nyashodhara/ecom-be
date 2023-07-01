@@ -22,4 +22,10 @@ public class ProductController {
         List<ProductDto> productDtos = productService.searchProducts();
         return new ResponseWrapper<>("Success","Success",200,productDtos);
     }
+
+    @GetMapping(value = "/{id}")
+    public ResponseWrapper<List<ProductDto>> getProductsByCategoryId(Long id){
+        List<ProductDto> productDtos = productService.getProductsByCategoryId(id);
+        return new ResponseWrapper<>("Success","Success",200,productDtos);
+    }
 }
