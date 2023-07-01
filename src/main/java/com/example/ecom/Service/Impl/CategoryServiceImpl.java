@@ -23,4 +23,11 @@ public class CategoryServiceImpl implements CategoryService {
         log.info("categories list" + categoryEntities);
         return CategoryAdapter.getCategoryDtoList(categoryEntities);
     }
+
+    @Override
+    public CategoryDto getCategoryById(Long id) {
+        CategoryEntity categoryEntity = categoryRepository.findByCategoryId(id);
+        log.info("category"+categoryEntity);
+        return CategoryAdapter.categoryEntityToDto(categoryEntity);
+    }
 }

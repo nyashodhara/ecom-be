@@ -16,8 +16,14 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @GetMapping(value = "/list")
-    public ResponseWrapper<List<CategoryDto>> searchProducts() {
+    public ResponseWrapper<List<CategoryDto>> getCategories() {
         List<CategoryDto> categoryDtos = categoryService.getCategories();
         return new ResponseWrapper<>("Success", "Success", 200, categoryDtos);
+    }
+
+    @GetMapping(value = "/{id}")
+    public ResponseWrapper<CategoryDto> getCategoryById(@PathVariable Long id) {
+        CategoryDto categoryDto = categoryService.getCategoryById(id);
+        return new ResponseWrapper<>("Success", "Success", 200, categoryDto);
     }
 }
