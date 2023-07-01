@@ -33,7 +33,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductDto> getProductsByCategoryId(Long id) {
         CategoryEntity categoryEntity = categoryRepository.findByCategoryId(id);
-        List<ProductEntity> productEntities = productRepository.findByCategoryId(categoryEntity.getCategoryId());
+        List<ProductEntity> productEntities = productRepository.findAllByCategory(categoryEntity.getCategoryId());
         return ProductAdapter.getProductDtoList(productEntities);
     }
 }
