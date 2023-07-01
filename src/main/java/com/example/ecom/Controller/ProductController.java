@@ -24,7 +24,7 @@ public class ProductController {
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseWrapper<List<ProductDto>> getProductsByCategoryId(Long id){
+    public ResponseWrapper<List<ProductDto>> getProductsByCategoryId(@PathVariable Long id){
         List<ProductDto> productDtos = productService.getProductsByCategoryId(id);
         return new ResponseWrapper<>("Success","Success",200,productDtos);
     }
