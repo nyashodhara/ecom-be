@@ -23,9 +23,15 @@ public class ProductController {
         return new ResponseWrapper<>("Success","Success",200,productDtos);
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/category/{id}")
     public ResponseWrapper<List<ProductDto>> getProductsByCategoryId(@PathVariable Long id){
         List<ProductDto> productDtos = productService.getProductsByCategoryId(id);
         return new ResponseWrapper<>("Success","Success",200,productDtos);
+    }
+
+    @GetMapping(value = "/{id}")
+    public ResponseWrapper<ProductDto> getProductsById(@PathVariable Long id){
+        ProductDto productDto = productService.getProductsById(id);
+        return new ResponseWrapper<>("Success","Success",200,productDto);
     }
 }

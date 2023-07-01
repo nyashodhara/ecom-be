@@ -41,4 +41,14 @@ public class ProductServiceImpl implements ProductService {
         }
         return null;
     }
+
+    @Override
+    public ProductDto getProductsById(Long id) {
+        ProductEntity productEntity = productRepository.findByProductId(id);
+        if (Objects.nonNull(productEntity)){
+            log.info(productEntity.toString());
+            return ProductAdapter.productEntityToDto(productEntity);
+        }
+        return null;
+    }
 }
