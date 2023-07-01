@@ -6,12 +6,14 @@ import com.example.ecom.Dto.ProductSearchDto;
 import com.example.ecom.Entity.ProductEntity;
 import com.example.ecom.Repository.ProductRepository;
 import com.example.ecom.Service.ProductService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@Slf4j
 public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductRepository productRepository;
@@ -19,6 +21,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductDto> searchProducts() {
         List<ProductEntity> productEntities = productRepository.findAll();
+        log.info("products list" + productEntities);
         return ProductAdapter.getProductDtoList(productEntities);
     }
 }
